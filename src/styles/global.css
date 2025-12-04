@@ -1,0 +1,41 @@
+:root {
+  --color-primary: #4caf50;
+  --color-primary-hover: #66bb6a;
+  --color-bg: #0a0e0d;
+  --color-surface: #1a1f1e;
+  --color-text: #e8f5e9;
+  --color-text-secondary: #a5d6a7;
+  --color-accent-gold: #81c784;
+  --color-border: #2d4a2f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0e0d 0%, #1a2420 100%);
+  min-height: 100vh;
+  color: var(--color-text);
+  padding: 20px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 5px 0;
+    font-size: 16px;
+  }
+}
