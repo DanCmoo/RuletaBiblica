@@ -1,12 +1,12 @@
 :root {
-  --color-primary: #4caf50;
-  --color-primary-hover: #66bb6a;
-  --color-bg: #0a0e0d;
-  --color-surface: #1a1f1e;
-  --color-text: #e8f5e9;
+  --color-primary: #66bb6a;
+  --color-primary-hover: #81c784;
+  --color-bg: #0d1f12;
+  --color-surface: #1a2f1e;
+  --color-text: #ffffff;
   --color-text-secondary: #a5d6a7;
   --color-accent-gold: #81c784;
-  --color-border: #2d4a2f;
+  --color-border: #4caf50;
 }
 
 * {
@@ -17,10 +17,13 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0a0e0d 0%, #1a2420 100%);
+  background: #0a1410;
   min-height: 100vh;
   color: var(--color-text);
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 html {

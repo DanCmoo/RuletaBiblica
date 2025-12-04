@@ -1,15 +1,17 @@
 .wheelContainer {
-  margin: 40px 0;
+  margin: 40px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 400px;
+  width: 100%;
 }
 
 .wheelWrapper {
   position: relative;
   width: 300px;
   height: 300px;
+  margin: 0 auto;
 }
 
 .indicator {
@@ -18,9 +20,9 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 35px;
-  color: #4caf50;
+  color: #81c784;
   z-index: 10;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 0 15px rgba(129, 199, 132, 0.5), 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .wheel {
@@ -42,8 +44,8 @@
     #F7B731 300deg 330deg,
     #5F27CD 330deg 360deg
   );
-  border: 8px solid #4caf50;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
+  border: 8px solid #66bb6a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,0,0,0.4), 0 0 30px rgba(102, 187, 106, 0.3);
   position: relative;
 }
 
