@@ -8,22 +8,33 @@ function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [currentProverb, setCurrentProverb] = useState(null);
   const [showResult, setShowResult] = useState(false);
-  const [hasSpun, setHasSpun] = useState(false);
+  const [usedProverbs, setUsedProverbs] = useState([]);
 
   const getRandomProverb = () => {
-    return proverbios_biblicos[Math.floor(Math.random() * proverbios_biblicos.length)];
+    const availableProverbs = proverbios_biblicos.filter(
+      proverb => !usedProverbs.includes(proverb.id)
+    );
+    
+    if (availableProverbs.length === 0) {
+      // Si no hay más proverbios disponibles, reinicia la lista
+      setUsedProverbs([]);
+      return proverbios_biblicos[Math.floor(Math.random() * proverbios_biblicos.length)];
+    }
+    
+    return availableProverbs[Math.floor(Math.random() * availableProverbs.length)];
   };
 
   const spinWheel = () => {
-    if (isSpinning || hasSpun) return;
+    if (isSpinning) return;
 
     setIsSpinning(true);
     setShowResult(false);
-    setHasSpun(true);
   };
 
   const handleSpinComplete = () => {
-    setCurrentProverb(getRandomProverb());
+    const selectedProverb = getRandomProverb();
+    setCurrentProverb(selectedProverb);
+    setUsedProverbs([...usedProverbs, selectedProverb.id]);
     setShowResult(true);
     setIsSpinning(false);
   };
@@ -48,7 +59,7 @@ function App() {
       <div className={styles.buttonContainer}>
         <button
           onClick={spinWheel}
-          disabled={isSpinning || hasSpun}
+          disabled={isSpinning}
           className={styles.spinBtn}
         >
           🎡 Girar la Ruleta
